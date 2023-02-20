@@ -1,0 +1,7 @@
+C:\Users\master\source\repos\5-CS-Singleton\CS Singleton\bin\Debug\CS Singleton.exe.config
+C:\Users\master\source\repos\5-CS-Singleton\CS Singleton\bin\Debug\CS Singleton.exe
+C:\Users\master\source\repos\5-CS-Singleton\CS Singleton\bin\Debug\CS Singleton.pdb
+C:\Users\master\source\repos\5-CS-Singleton\CS Singleton\obj\Debug\CS Singleton.csprojAssemblyReference.cache
+C:\Users\master\source\repos\5-CS-Singleton\CS Singleton\obj\Debug\CS Singleton.csproj.CoreCompileInputs.cache
+C:\Users\master\source\repos\5-CS-Singleton\CS Singleton\obj\Debug\CS Singleton.exe
+C:\Users\master\source\repos\5-CS-Singleton\CS Singleton\obj\Debug\CS Singleton.pdb
