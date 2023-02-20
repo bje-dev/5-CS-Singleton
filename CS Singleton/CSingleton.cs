@@ -22,7 +22,7 @@ namespace CS_Singleton
     //RECORDAR QUE UN ATRIBUTO ESTATICO ES UN TIPO ESPECIAL DE ATRIBUTO QUE PERTENECE A LA CLASE EN LUGAR DE A UNA INSTANCIA INDIVIDUAL DE LA CLASE.
     //ESTO SIGNIFICA QUE EN LUGAR DE TENER UN VALOR SEPARADO PARA CADA OBJETO DE LA CLASE EL ATRIBUTO ESTATICO ES COMPARTIDO POR TODOS LOS OBJETOS DE LA CLASE Y SE ALMACENA EN UN SOLO LUGAR EN LA MEMORIA.
     //POR LO TANTO, SI SE CAMBIA DE VALOR EL ATRIBUTO ESTATICO EN UNA INSTANCIA, EL CAMBIO SE REFLEJARA EN TODAS LAS DEMAS INSTANCIAS DE LA MISMA CLASE.
-        private static CSingleton instancia = null;
+        private static CSingleton _instancia = null;
 
     //PARA ESTE EJEMPLO UTILIZAREMOS LOS SIGUIENTES DATOS QUE FORMARAN PARTE DEL OBJETO INSTANCIADO.
         private string nombre;
@@ -43,48 +43,40 @@ namespace CS_Singleton
     //A DIFERENCIA DE LOS METODOS DE INSTANCIA, QUE REQUIEREN QUE SE CREE UN OBJETO DE LA CLASE PARA LLAMAR AL METODO.
     //lOS METODOS ESTATICOS SE PUEDEN LLAMAR DIRECTAMENTE DESDE LA CLASE SIN NECESIDAD DE CREAR UN OBJETO.
 
-        public static CSingleton ObtenerInstancia()
+        public static CSingleton ObtenerInstancia(int pedad, string pnombre)
         {
 
     //PREGUNTAMOS SI EL ATRUBUTO INSTANCIA ESTA VACIO - (SI NO CONTIENE NINGUNA INSTANCIA).
     //UNA VEZ INSTANCIADO, LA 2A VEZ QUE SE QUIERA INSTANCIAR SALTA EL IF Y DEVUELVE LA INSTANCIA CREADA ANTERIORMENTE.
-            if (instancia==null)
+            if (_instancia==null)
             {
 
     //INSTANCIAMOS HACIENDO USO DEL COSNTRUCTOR QUE SE ENCUENTRA DE FORMA PRIVADA.
     //ESTO ES POSIBLE YA QUE EL CONSTRUCTOR PRIVADO PERMITE SER ACCEDIDO DESDE DENTRO DE LA PROPIA CLASE.
-                instancia = new CSingleton();
-                Console.WriteLine("Instancia creada por primera vez...");
+                _instancia = new CSingleton();
+                _instancia.edad = pedad;
+                _instancia.nombre = pnombre;
+                Console.WriteLine("Se crea instancia ...");
                 
+
             }
 
     //RETORNAMOS LA INSTANCIA 
-            return instancia;
+            return _instancia;
+
         }
 
     ////////////////////////AGREGO ALGUNOS METODOS PARA HACER PRUEBAS EN CONSOLA//////////////////////////7
 
-    //METODO PARA CARGAR VALORES AL OBJETO CREADO
-        public void PonerDatos(string pNombre, int pEdad)
-        {
-            nombre = pNombre;
-            edad = pEdad;
-        }
-
-        public void AlgunProceso()
-        {
-            Console.WriteLine("{0} esta trabajando en algo", nombre);
-        }
-
+    //METODO PARA IMPRIMIR RESULTADOS
+    //EL METODO ToString ES UN METODO VIRTUAL QUE SE UTILIZA PARA DEVOLVER UNA REPRESENTACION EN FORMATO TEXTO DE UN OBJETO
+    //EL MISMO PUEDE SER UTILIZADO PARA FINES DE DEPURACION Y REGISTRO.
+    //ESTE METODO SE ESTA ANULANDO  override PARA PROPORCIONAR UNA IMPLEMENTACION PERSONALIZADA EN LA CLASE QUE LO CONTIENE.
+    //SE UTILIZA PARA FORMATEAR UNA CADENA CON ARGUMENTOS.
         public override string ToString()
         {
-            return string.Format("La persona {0}, tienen edad de {1}", nombre, edad);
+            return string.Format("Este es el metodo ToString: {0}, tiene la edad de {1}", nombre, edad);
         }
-
-
-
-
-
     }
 }
 
