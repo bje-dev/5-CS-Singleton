@@ -53,6 +53,7 @@ namespace CS_Singleton
 
     //INSTANCIAMOS HACIENDO USO DEL COSNTRUCTOR QUE SE ENCUENTRA DE FORMA PRIVADA.
     //ESTO ES POSIBLE YA QUE EL CONSTRUCTOR PRIVADO PERMITE SER ACCEDIDO DESDE DENTRO DE LA PROPIA CLASE.
+
                 _instancia = new CSingleton();
                 _instancia.edad = pedad;
                 _instancia.nombre = pnombre;
@@ -77,6 +78,7 @@ namespace CS_Singleton
         {
             return string.Format("Este es el metodo ToString: {0}, tiene la edad de {1}", nombre, edad);
         }
+
     }
 }
 

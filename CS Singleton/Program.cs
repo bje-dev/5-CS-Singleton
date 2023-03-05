@@ -43,9 +43,7 @@ namespace CS_Singleton
 
             Console.ReadLine();
 
-
-
-
+                        
         }
     }
 }
